@@ -53,8 +53,8 @@ int hash_insert(dado t[], int m, string info)
         j = dhash(info, i, m);
         if (t[j].status != 1)
         {
-            t[j].info = info; //< -- Logo que há mais um dado, devemos adicionar o t[j].info também
-            t[j].k = h1(info, m);
+            t[j].info = info; //< -- Verificação da string para conferir igualdade
+            t[j].k = h1(info, m); //< -- Hash da String
             t[j].status = 1;
             return j;
         }
