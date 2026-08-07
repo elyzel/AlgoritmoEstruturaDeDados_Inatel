@@ -1,0 +1,248 @@
+Leia um número inteiro N. Imprima o quadrado de cada um dos valores pares de 1 a N, incluindo N, se for o caso.
+
+Entrada
+A entrada contém um número inteiro N (5 < N < 2000).
+
+Saída
+Imprima o quadrado de cada um dos valores pares de 1 a N, conforme o exemplo fornecido.
+
+Cuidado! Algumas linguagens imprimem automaticamente 1e+006 em vez de 1000000. Por favor, configure seu programa para imprimir no formato correto, definindo a precisão da saída.
+
+========================================================================
+			Exercício 3 - Even Quare
+========================================================================
+#include <iostream>
+
+using namespace std;
+
+int main() {
+    int N;
+
+    // Entrada do valor N
+    if (cin >> N) {
+        // Laço de 2 até N de 2 em 2
+        for (int i = 2; i <= N; i += 2) {
+            // Formatação exata esperada pelo Beecrowd
+            cout << i << "^2 = " << i * i << endl;
+        }
+    }
+
+    return 0;
+}
+
+========================================================================
+			Exercício 4 - Experiments
+========================================================================
+
+
+Maria acaba de iniciar a pós-graduação em uma faculdade de medicina e precisa da sua ajuda para organizar um experimento de laboratório pelo qual é responsável. Ela quer saber, ao final do ano, quantos animais foram utilizados no laboratório e qual a porcentagem de cada tipo de animal utilizado.
+
+O laboratório utiliza, especificamente, três tipos de animais: sapos, ratos e coelhos. Para obter essas informações, ela dispõe do número exato de experimentos realizados, bem como do tipo e da quantidade de cada animal utilizado em cada experimento.
+
+Entrada
+A primeira linha da entrada contém um número inteiro N, indicando a quantidade de casos de teste a seguir. Cada caso de teste contém um número inteiro Quantidade (1 ≤ Quantidade ≤ 15), que representa o número de animais utilizados, e um caractere Tipo ('C', 'R' ou 'S'), indicando o tipo de animal:
+- C: Coelho
+- R: Rato
+- S: Sapo
+
+Saída
+Imprima o total de animais utilizados, o total de cada tipo de animal e a porcentagem de cada um em relação ao total de animais utilizados. A porcentagem deve ser exibida com duas casas decimais.
+
+#include <iostream>
+#include <iomanip>
+
+using namespace std;
+
+int main() {
+    int N;
+    cin >> N;
+
+    int total = 0, c = 0, r = 0, s = 0;
+
+    for (int i = 0; i < N; i++) {
+        int Q;
+        char tipo;
+        
+        cin >> Q >> tipo;
+
+        total += Q;
+
+        if (tipo == 'C') {
+            c += Q;
+        } else if (tipo == 'R') {
+            r += Q;
+        } else if (tipo == 'S') {
+            s += Q;
+        }
+    } 
+
+    double perc_c = (c * 100.0) / total;
+    double perc_r = (r * 100.0) / total;
+    double perc_s = (s * 100.0) / total;
+
+    cout << fixed << setprecision(2);
+    cout << "Total: " << total << " cobaias" << endl;
+    cout << "Total de coelhos: " << c << endl;
+    cout << "Total de ratos: " << r << endl;
+    cout << "Total de sapos: " << s << endl;
+    cout << "Percentual de coelhos: " << perc_c << " %" << endl;
+    cout << "Percentual de ratos: " << perc_r << " %" << endl;
+    cout << "Percentual de sapos: " << perc_s << " %" << endl;
+
+    return 0;
+}
+
+
+========================================================================
+			Exercício 5 - Fibonacci
+========================================================================
+
+
+Escreva um programa que leia um número e imprima o número de Fibonacci correspondente a esse número lido. Lembre-se de que os primeiros elementos da sequência de Fibonacci são 0 e 1, e cada termo seguinte é a soma dos dois anteriores. Todos os números de Fibonacci calculados neste programa devem caber em um número de 64 bits sem sinal (*unsigned*).
+
+Entrada
+A primeira linha da entrada contém um único número inteiro T, indicando o número de casos de teste. Cada caso de teste contém um único número inteiro N (0 ≤ N ≤ 60), correspondente ao N-ésimo termo da sequência de Fibonacci.
+
+Saída
+Para cada caso de teste na entrada, imprima a mensagem "Fib(N) = X", onde X é o N-ésimo termo da sequência de Fibonacci.
+
+#include <iostream>
+
+using namespace std;
+
+int main() {
+    // Vetor para guardar os termos de 0 a 60, pois o int geraria número negativos ou incorretos e "fib[61]" é a criação de um vetor para armazenar 61 posições.
+    unsigned long long fib[61];
+
+    // Termos base da sequência de Fibonacci
+    fib[0] = 0;
+    fib[1] = 1;
+
+    // Preenche o vetor até N = 60
+    // "int i = 2" significa que o laço inicia "i" com valor de 2
+    // a fórmula da matemática de Fibonacci é fib[i] = fib[i - 1] + fib[i -2]
+
+    for (int i = 2; i <= 60; i++) {
+        fib[i] = fib[i - 1] + fib[i - 2];
+    }
+
+    int T; // Quantidade de casos de teste
+    if (cin >> T) {
+
+	// O laço funcionará somente T vezes.
+        while (T--) {
+            int N;
+            cin >> N;
+            // Exibe a resposta formatada como o Beecrowd exige
+            cout << "Fib(" << N << ") = " << fib[N] << endl;
+        }
+    }
+
+    return 0;
+}
+
+
+===================================================================================
+			Exercício 6 - Lowest Number and Position
+===================================================================================
+
+Escreva um programa que leia um número N. Esse N representa o tamanho de um array X[N]. Em seguida, leia cada um dos números de X, encontre o menor elemento desse array e sua posição, imprimindo essas informações.
+
+Entrada
+A primeira linha da entrada contém um número inteiro N (1 < N < 1000), indicando a quantidade de elementos a serem lidos para um array X[N] de números inteiros. A segunda linha contém os N valores, separados por um espaço. Lembre-se de que não haverá números repetidos na entrada.
+
+Saída
+A primeira linha exibe a mensagem “Menor valor:” seguida de um espaço e do menor número lido na entrada. A segunda linha exibe a mensagem “Posicao:” seguida de um espaço e da posição do array onde se encontra o menor número, lembrando que o array começa na posição zero.
+
+#include<iostream>
+
+using namespace std;
+
+int main() {
+
+	int N;
+	cin >> N;
+
+	int X[N]; 
+
+	cin >> X[0]; 
+	int menor = X[0]; 
+	int posicao = 0;
+
+	for(int i = 1; i < N; i++){
+		cin >> X[i];
+		
+		if(X[i] < menor) {
+			menor = X[i];
+			posicao = i;
+		}
+
+	}
+	cout << "Menor valor: " << menor << endl;
+	cout << "Posicao: " << posicao << endl;
+
+	return 0;
+	}
+
+===================================================================================
+			Exercício 7 - Square Matrix
+===================================================================================
+
+Escreva um programa que leia um número inteiro N (0 ≤ N ≤ 100) correspondente à ordem de um vetor bidimensional de inteiros e construa o vetor de acordo com o exemplo acima.
+
+Entrada
+A entrada consiste em vários números inteiros, um por linha, correspondentes às ordens dos vetores a serem construídos. O fim da entrada é indicado por zero (0).
+
+Saída
+Para cada número inteiro de entrada, imprima o vetor correspondente de acordo com o exemplo. (Os valores dos vetores devem ser formatados em um campo de tamanho 3, justificados à direita e separados por um espaço. Não deve haver espaço após o último caractere de cada linha do vetor. Uma linha em branco deve ser impressa após cada vetor.)
+
+#include <iostream>
+#include <iomanip>   // Necessário para usar setw()
+#include <algorithm> // Necessário para usar min()
+
+using namespace std;
+
+int main() {
+    int N;
+
+    // O laço continua lendo valores até N ser igual a 0
+    while (cin >> N && N != 0) {
+
+        for (int i = 0; i < N; i++) {
+            for (int j = 0; j < N; j++) {
+                // Descobre a menor distância até as 4 bordas
+                int dist_topo = i + 1;
+                int dist_baixo = N - i;
+                int dist_esq = j + 1;
+                int dist_dir = N - j;
+
+                int valor = min({dist_topo, dist_baixo, dist_esq, dist_dir});
+
+                // Formatação: o 1º elemento da linha não tem espaço antes dele
+                if (j == 0) {
+                    cout << setw(3) << valor;
+                } else {
+                    cout << " " << setw(3) << valor;
+                }
+            }
+            cout << endl; // Quebra de linha ao fim de cada linha da matriz
+        }
+        cout << endl; // Linha em branco obrigatória após cada matriz
+    }
+
+    return 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
