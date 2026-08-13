@@ -12,4 +12,67 @@ Para cada caso de teste, seu programa deve imprimir três linhas com as mensagen
 Para a maior quantidade de brinquedos selecionada, haverá apenas uma possibilidade de peso total ou de pacotes restantes.
 */
 
-#include<iostream>
+#include<iostream> //Biblioteca inicial
+#include<algorithm> //Biblioteca com funções prontas
+#include<vector> //Biblioteca para criar arrays dinâmicos
+
+using namespace std;
+
+int main()  {
+    int N;  //Quantidade de viagens
+    if(cin >> N){
+        while(N--)  {
+            int Pac;    //Quantidade de pacotes disponíveis
+            cin >> Pac;
+
+            vector<int> qt(Pac + 1);
+            vector<int> peso(Pac + 1);
+
+            for(int i = 1; i <= Pac; i++)   {
+                cin >> qt[i] >> peso[i];
+            }
+
+            int cpdd = 50;
+            //Tabela DP: dp[pacotes][peso]
+            vector<vector<int>> dp(Pac + 1, vector<int>(cpdd + 1, 0));
+
+            //Preenchimento da tabela de decisoes
+            for(int i = 1; i <= Pac; i++)   {
+                for(int w = 0; w <= Pac; w++)   {
+                    if(peso[i] <= w)    {
+                        dp[i][w] = max(dp[i - 1][w], dp[i - 1][w - peso[i]] + qt[i]);
+                    }   else    {
+                        dp[i][w] = dp[i - 1][w];
+                    }
+                }
+            }
+
+            int brinquedos = dp[Pac][cpdd];
+
+            //Rastreamento de volta para achar peso total e pacotes sobrantes
+            int w = cpdd;
+            int peso_total = 0;
+            int pacotes_levados = 0;
+
+            for(int i = Pac; i > 0; i--)    {
+                if(dp[i][w] != dp[i - 1][w])    {
+                    peso_total += peso[i];
+                    pacotes_levados++;
+                    w -= peso[i];   //Subtrai o peso do pacote escolhido
+                }
+            }
+
+            int pacotes_sobrando = Pac - pacotes_levados;
+
+            //Saída
+
+            cout << brinquedos << " brinquedos" << endl;
+            cout << "Peso: " << peso_total << " kg" << endl;
+            cout << "sobra(m) " << pacotes_sobrando << " pacote(s)" << endl;
+
+        }
+    }
+
+    return 0;
+    
+}
