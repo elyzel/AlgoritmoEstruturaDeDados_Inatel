@@ -17,19 +17,42 @@ C = número fixo de custo pela compra de cada ação
 
 */
 
-#include<iostream>
-#include<vector>
-#include<algorithm>
+#include <iostream>
+#include <vector>
+#include <algorithm> // Necessário para a função max()
 
 using namespace std;
 
-int main()  {
-    int N; //Número de dias acompanhando as ações
-    int C; //Taxa fixa do corretor
-    int P; //Preco da ação
+int main() {
+    int N, C;
 
-    while(cin >> N >> C)    {
-
+    // Lê a quantidade de dias N e a taxa C enquanto houver casos de teste
+    while (cin >> N >> C) {
+        
+        // 1. Armazena todos os N preços em um vector
         vector<int> P(N);
+        for (int i = 0; i < N; i++) {
+            cin >> P[i];
+        }
+
+        // 2. Condições Iniciais (Dia 1 - índice 0 do vetor)
+        int sem_acao = 0;            // Não comprou nenhuma ação (lucro = 0)
+        int com_acao = -P[0] - C;    // Comprou no 1º dia (gasta o preço P[0] + taxa C)
+
+        // 3. Transição dos estados do Dia 2 (índice 1) até o último dia (índice N - 1)
+        for (int i = 1; i < N; i++) {
+            // Guarda os valores do dia anterior antes de atualizar
+            int sem_acao_anterior = sem_acao;
+            int com_acao_anterior = com_acao;
+
+            // Transição para o dia i:
+            sem_acao = max(sem_acao_anterior, com_acao_anterior + P[i]);
+            com_acao = max(com_acao_anterior, sem_acao_anterior - P[i] - C);
+        }
+
+        // O resultado final com maior lucro estará no estado 'sem_acao'
+        cout << sem_acao << endl;
     }
+
+    return 0;
 }
