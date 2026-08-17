@@ -1,6 +1,13 @@
-# Algoritmo e Estrutura de Dados II - Inatel
+# Algoritmo e Estrutura de Dados - Inatel
 Todos os projetos desenvolvidos na graduação elaborados na linguagem C++.
 
+## Algoritmos III
+Conceitos aprendidos:
+
+- Brute Force
+- Greedy
+
+## Algoritmos II
 Conceitos aprendidos:
 
 - Pesquisa Binária
