@@ -1,0 +1,197 @@
+{
+  "main": {
+    "id": "04a74528bb08b742",
+    "type": "split",
+    "children": [
+      {
+        "id": "0323bd4aa4c8b870",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "567b5d8b1835e305",
+            "type": "leaf",
+            "state": {
+              "type": "empty",
+              "state": {},
+              "icon": "lucide-file",
+              "title": "Nova aba"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "78b3a261ad61f2ca",
+    "type": "split",
+    "children": [
+      {
+        "id": "6b1c15e4221c7171",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "3d4964adb8e90281",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical",
+                "autoReveal": false,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-folder-closed",
+              "title": "Explorador de arquivos"
+            }
+          },
+          {
+            "id": "fad06ed86b31b676",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              },
+              "icon": "lucide-search",
+              "title": "Procurar"
+            }
+          },
+          {
+            "id": "c31451ccda382d1f",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-bookmark",
+              "title": "Marcadores"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "right": {
+    "id": "c4957defff8b8878",
+    "type": "split",
+    "children": [
+      {
+        "id": "e1d42836d51779b7",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "1772b57087277d9c",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "Algoritmo e Estrutura de Dados III/Brute Force and Greedy Strategy/How many Calls/Explicação da Estrutura do Código.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-coming-in",
+              "title": "Links inversos"
+            }
+          },
+          {
+            "id": "4527288fe4a60c8d",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "Algoritmo e Estrutura de Dados III/Brute Force and Greedy Strategy/How many Calls/Explicação da Estrutura do Código.md",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-going-out",
+              "title": "Links de saída"
+            }
+          },
+          {
+            "id": "5b65cdf409e0a810",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-tags",
+              "title": "Etiquetas"
+            }
+          },
+          {
+            "id": "f4eaa3ea6c0a7285",
+            "type": "leaf",
+            "state": {
+              "type": "all-properties",
+              "state": {
+                "sortOrder": "frequency",
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-archive",
+              "title": "Todas as propriedades"
+            }
+          },
+          {
+            "id": "20ce50db021c5394",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "Algoritmo e Estrutura de Dados III/Brute Force and Greedy Strategy/How many Calls/Explicação da Estrutura do Código.md",
+                "followCursor": false,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-list",
+              "title": "Sumário"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:Abrir a troca rápida": false,
+      "graph:Abrir visualização em gráfico": false,
+      "canvas:Criar novo canvas": false,
+      "daily-notes:Abrir a nota de hoje": false,
+      "templates:Inserir modelo": false,
+      "command-palette:Abrir paleta de comandos": false,
+      "bases:Criar nova base": false
+    }
+  },
+  "active": "567b5d8b1835e305",
+  "lastOpenFiles": [
+    "Algoritmo e Estrutura de Dados III/Brute Force and Greedy Strategy/How many Calls/Explicação da Estrutura do Código.md",
+    "Algoritmo e Estrutura de Dados III/Revisão de Estratégias/Dragster/Dragster.md",
+    "Algoritmo e Estrutura de Dados III/Anotações/Aula 2/Aula 2 - Mochila Utilizando Brute Force e Greedy.md",
+    "Algoritmo e Estrutura de Dados III/Anotações/Aula 2/Recursividade.canvas",
+    "Algoritmo e Estrutura de Dados III/Anotações/Aula 2",
+    "Algoritmo e Estrutura de Dados III/Anotações/Aula 1",
+    "Algoritmo e Estrutura de Dados III/Anotações/Aula 1/Aula 1 - Conceito de Greedy e Brute Force.md"
+  ]
+}
