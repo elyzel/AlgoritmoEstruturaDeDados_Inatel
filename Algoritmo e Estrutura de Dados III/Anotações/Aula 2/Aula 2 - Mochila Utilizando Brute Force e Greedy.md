@@ -46,5 +46,4 @@ Utilizada uma matriz bidimensional para comparar os valores de forma iterativa o
 | 0   | 0   | 0   | 0   | 0   | 0   | 0   | 0   | 0   | 0   | 0   |
 | 0   | 0   | 0   | 0   | 0   | 35  | 35  | 35  | 35  | 35  | 35  |
 | 0   | 0   | 0   | 25  | 25  | 35  | 35  | 35  | 60  | 60  | 60  |
-|     |     |     |     |     |     |     |     |     |     |     |
-|     |     |     |     |     |     |     |     |     |     |     |
+
