@@ -6,6 +6,7 @@ Conceitos aprendidos:
 
 - Brute Force
 - Greedy
+- Programação Dinâmica
 
 ## Algoritmos II
 Conceitos aprendidos:
