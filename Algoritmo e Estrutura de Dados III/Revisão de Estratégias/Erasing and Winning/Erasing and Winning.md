@@ -8,8 +8,6 @@
 
 Para maximizar um número, devemos priorizar colocar **dígitos maiores nas posições mais à esquerda** (ordem de grandeza).
 
-Plaintext
-
 ```
 Entrada: N = 4, D = 2, Número = "4172"
 
@@ -27,9 +25,7 @@ Resultado Final: "72"
 
 ### Bloco 1: Importação de Bibliotecas e Otimização de E/S
 
-C++
-
-```
+```C++
 #include <iostream>
 #include <vector>
 #include <string>
@@ -51,9 +47,7 @@ using namespace std;
 
 ### Bloco 2: Controle do Laço Principal
 
-C++
-
-```
+```C++
 int main() {
     int N, D;
 
@@ -71,9 +65,7 @@ int main() {
 
 ### Bloco 3: Processamento com a Pilha Gulosa
 
-C++
-
-```
+```C++
         string resultado = "";
         int apagados = 0;
 
@@ -110,9 +102,7 @@ C++
 
 ### Bloco 4: Ajuste do Tamanho Final e Saída
 
-C++
-
-```
+```C++
         int tamanhoFinal = N - D;
         resultado = resultado.substr(0, tamanhoFinal);
 

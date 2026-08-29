@@ -41,9 +41,7 @@ using namespace std;
 
 ### 2. Multiplicação de Matrizes $2 \times 2$
 
-C++
-
-```
+```C++
 void multiplicar(long long A[2][2], long long B[2][2], long long mod) {
     long long C[2][2];
     C[0][0] = (A[0][0] * B[0][0] + A[0][1] * B[1][0]) % mod;
@@ -69,9 +67,7 @@ void multiplicar(long long A[2][2], long long B[2][2], long long mod) {
 
 ### 3. Exponenciação Rápida de Matrizes
 
-C++
-
-```
+```C++
 void potenciaMatriz(long long M[2][2], unsigned long long n, long long mod) {
     long long resultado[2][2] = {{1, 0}, {0, 1}}; // Matriz Identidade
     long long base[2][2] = {{M[0][0], M[0][1]}, {M[1][0], M[1][1]}};
@@ -106,9 +102,7 @@ void potenciaMatriz(long long M[2][2], unsigned long long n, long long mod) {
 
 ### 4. Função Principal (`main`)
 
-C++
-
-```
+```C++
 int main() {
     unsigned long long n;
     long long b;
@@ -148,9 +142,7 @@ int main() {
 
 ## 💻 Código Completo Compilável
 
-C++
-
-```
+```C++
 #include <iostream>
 
 using namespace std;
