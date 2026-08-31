@@ -43,9 +43,13 @@ Quando a busca terminar, retornar a solução encontrada.
 
 Dada uma lista com vários elementos, retornar quantos elementos similares a um determinado elemento existem uma lista:
 
-```
+```cpp
 int conta_ocorrencias(int n, int *vet, int elem) {
-	quantidade
+quantidade = 0;
+int i; for (i=0; i<n; i++){
+if (elem == vet[i]) quantidade++;
+	}
+return quantidade;
 }
 ```
 
@@ -73,7 +77,14 @@ As solução das instâncias menores são combinadas com a instância original.
 
 ## Quick Sort
 
-{Colocar bloco de código}
+```c++
+PENDRIVE (t, n, c) D t1 ≤ ... ≤ tn
+	i := 1
+	enquanto i ≤ n e ti ≤c
+		c := c - ti
+		i := i+1
+	devolva {1, ... ,i-1}
+```
 
 ## Programação Dinâmica
 
