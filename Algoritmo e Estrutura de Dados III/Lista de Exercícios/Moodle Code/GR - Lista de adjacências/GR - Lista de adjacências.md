@@ -80,17 +80,24 @@ struct no
     int peso;   // peso da aresta
 };
 
-// Função responsável por criar uma aresta
+// Função responsável por criar uma aresta (Modo Tradicional)
 void cria_aresta(list<no> adj[], int u, int v, int p, int orientado)
 {
+    // Criamos uma variável do tipo "no" e preenchemos os dados
+    no novo_no;
+    novo_no.v = v;
+    novo_no.peso = p;
+    
     // Adiciona a aresta u -> v
-    adj[u].push_back({v, p});
+    adj[u].push_back(novo_no);
 
-    // Se o grafo NÃO for orientado,
-    // também precisamos adicionar v -> u
+    // Se o grafo NÃO for orientado, adicionamos a volta (v -> u)
     if (orientado == 0)
     {
-        adj[v].push_back({u, p});
+        no no_volta;
+        no_volta.v = u;
+        no_volta.peso = p;
+        adj[v].push_back(no_volta);
     }
 }
 
@@ -120,12 +127,17 @@ int main()
         cria_aresta(adj, u, v, p, orientado);
     }
 
-    // Mostra a lista de adjacências
+    // Mostra a lista de adjacências (Modo Tradicional com Iterador)
     for (int i = 0; i < n; i++)
     {
-        for (const auto &x : adj[i])
+        // Declaramos um iterador para a nossa lista de "no"
+        list<no>::iterator it;
+
+        // O iterador começa no início da lista e vai até o final
+        for (it = adj[i].begin(); it != adj[i].end(); it++)
         {
-            cout << i << " " << x.v << " " << x.peso << endl;
+            // Usamos a setinha "->" para acessar os dados dentro do iterador
+            cout << i << " " << it->v << " " << it->peso << endl;
         }
     }
 

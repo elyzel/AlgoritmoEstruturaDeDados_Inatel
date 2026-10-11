@@ -22,8 +22,19 @@ A entrada contém vários casos de teste. Cada caso de teste inicia com dois nú
 
 **RESPOSTA:**
 
-
-
-```
-
+```cpp
+int main(){
+	list<Aresta> grafo[2000];
+	int m, n, x, y, z;
+	
+	cin >> m >> n;
+	for(int i = 0; i<n; i++){
+		cin >> x >> y >> z;
+		grafo[x].push_back({x,y,z});
+		grafo[y].push_back({y,x,z});
+	}
+	custo_otimizado = prim(grafo, m, 0);
+	economia = custo_anterior - custo_otimizado;
+	cout << economia << endl;
+}
 ```
