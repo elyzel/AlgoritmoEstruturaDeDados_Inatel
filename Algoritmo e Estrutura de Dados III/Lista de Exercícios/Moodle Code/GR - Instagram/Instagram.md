@@ -1,6 +1,5 @@
 > [!QUESTION]
-> Você foi contratado pelo Instagram como engenheiro de software para gerenciar as relações entre os
-usuários. Para essa tarefa, você opta por utilizar um grafo direcionado, em que os nós representam os usuários, e as arestas as relações entre eles. Um usuário pode seguir outro, mas esse outro pode não o seguir de volta, assim como dois usuários podem se seguir mutuamente.
+> Você foi contratado pelo Instagram como engenheiro de software para gerenciar as relações entre os usuários. Para essa tarefa, você opta por utilizar um grafo direcionado, em que os nós representam os usuários, e as arestas as relações entre eles. Um usuário pode seguir outro, mas esse outro pode não o seguir de volta, assim como dois usuários podem se seguir mutuamente.
 >
 >Entrada
 >
