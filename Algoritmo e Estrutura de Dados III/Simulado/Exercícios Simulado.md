@@ -182,7 +182,18 @@ Para o problema da mochila, tenho uma mochila com capacidade $C = 5\text{ kg}$, 
    - Pega Item 3 (peso 1, cap restante 1)
    - Pega Item 4 (peso 1, cap restante 0)
    - **Itens selecionados:** $\{7, 2, 3, 4\}$, Peso total $= 5$, Valor total $= 40 + 60 + 30 + 20 = 150$.
-3. **Observação conceitual:** O algoritmo guloso para a mochila 0/1 nem sempre garante a solução ótima em todos os casos gerais, mas para esta instância específica obteve $150$ (o ótimo absoluto).
+1. **Observação conceitual:** O algoritmo guloso para a mochila 0/1 nem sempre garante a solução ótima em todos os casos gerais, mas para esta instância específica obteve $150$ (o ótimo absoluto).
+
+|**i \ w**|**Cap 0**|**Cap 1**|**Cap 2**|**Cap 3**|**Cap 4**|**Cap 5**|
+|---|---|---|---|---|---|---|
+|**0 (Nenhum)**|0|0|0|0|0|0|
+|**1 (P:2, V:30)**|0|0|30|30|30|30|
+|**2 (P:2, V:60)**|0|0|60|60|90|90|
+|**3 (P:1, V:30)**|0|30|60|90|90|120|
+|**4 (P:1, V:20)**|0|30|60|90|110|120|
+|**5 (P:2, V:40)**|0|30|60|90|110|130|
+|**6 (P:3, V:80)**|0|30|60|90|110|140|
+|**7 (P:1, V:40)**|0|40|70|100|130|**150**|
 
 ---
 
