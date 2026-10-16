@@ -16,6 +16,24 @@ H que representa o IDH mínimo que uma cidade precisa ter para ser considerada n
 
 A saída deve ser um inteiro representando a menor rota para sair da cidade Vo e chegar na cidade Vd 
 passando apenas por cidades com um IDH maior que H.
+
+| Exemplo de entrada | Exemplo de saída |
+| :--- | :--- |
+| 5 | |
+| anatrice 15.4 | |
+| odarilheo 10.1 | |
+| tantisara 15.2 | |
+| ujesania 10.3 | |
+| maribal 15.1 | |
+| 7 | |
+| 2 1 1 | 4 |
+| 2 0 3 | |
+| 1 0 4 | |
+| 0 3 1 | |
+| 1 4 2 | |
+| 0 4 1 | |
+| 3 4 2 | |
+| 2 4 13.0 | |
 */
 
 #include <iostream>
