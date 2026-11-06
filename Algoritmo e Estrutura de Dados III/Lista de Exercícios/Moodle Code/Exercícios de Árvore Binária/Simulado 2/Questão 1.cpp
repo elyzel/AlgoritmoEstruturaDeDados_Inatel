@@ -87,6 +87,7 @@ void show_in_level(node * current, int Tmin, int Tmax){
     while(!visit_list.empty()){
         node * temp = visit_list.front();
 
+        //Mais uma condição é criada para extrair o valor de cada peixe
         if(temp->toxidade >= Tmin && temp->toxidade <= Tmax){
             cout << temp->indice << ":" << temp->toxidade << endl;
         }
