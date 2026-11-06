@@ -55,32 +55,41 @@ struct Aresta{
   int origem, destino, peso;
 };
 
-// Mesmo Prim do modelo: soma o custo das arestas da AGM
+//<-- Função composta pela lista de adjacência, n° de vertices e origem
 int prim_lista(list<Aresta> grafo[], int vertices, int origem){
 
-  bool visitado[vertices];
-  int pai[vertices], distancia[vertices], atual;
+  bool visitado[vertices];  //Verifica se o vertice foi visitado ou não
+  int pai[vertices];  //Criar a tabela de vértices pai
+  int distancia[vertices];  //Cria a tabela de distancia entre os vértices
+  int atual;  //Variavel que posiciona qual o vértice sendo tratodo  
 
+  //Define os valores iniciais de todos os vértices
   for(int i=0; i<vertices; i++){
     visitado[i] = false;
     pai[i] = -1;
     distancia[i] = INF;
   }
 
+  //Posiciona o vértice de origem no grafo e define o valor inicial 0
   atual = origem;
   distancia[atual] = 0;
 
+  //Enquanto o vértice não é visitado..
   while(!visitado[atual]){
 
-    visitado[atual] = true;
-    list<Aresta>::iterator it;
+    visitado[atual] = true; //Declara o vértice atual como visitado
+    list<Aresta>::iterator it;  //Cria um ponteiro interno da lista de adjacência
 
+    //Percorre por todo grafo após a inserção do vértices
     for(it=grafo[atual].begin(); it!=grafo[atual].end(); it++){
 
-      int d = it->destino, p = it->peso;
+      int d = it->destino;  //<-- Define o valor do destino a cada vértice analisado
+      int p = it->peso; //<-- Define o valor do peso da aresta a cada vértice analisado
 
+      //Verifica se o caminho realizado é menor que o caminho definido anteriormente
       if(!visitado[d] && p < distancia[d]){
 
+        //Atualiza os valores de menor caminho sobre todo o grafo
         distancia[d] = p;
         pai[d] = atual;
 
@@ -100,15 +109,16 @@ int prim_lista(list<Aresta> grafo[], int vertices, int origem){
     }
   }
 
-  int custo = 0;
+  int custo = 0;  //<-- Representa o custo inicial da habilidade
 
+  //Percorre por todos os vértices existentes
   for(int i=0; i<vertices; i++){
 
-    custo += distancia[i];
+    custo += distancia[i];  //<-- Soma o custo total de todas as distancias registradas
 
   }
 
-  return custo;
+  return custo; //<-- Retorna o valor do custo
 
 }
 
@@ -134,11 +144,13 @@ int main(){
 
     cin >> origem >> destino >> custo;
 
+    //Grafo Não Orientado
     grafo[origem].push_back({origem, destino, custo});
     grafo[destino].push_back({destino, origem, custo});
 
   }
 
+  //Imprime o valor do custo total das distancias registradas no grafo
   cout << prim_lista(grafo, H, 0) << endl;
 
   return 0;

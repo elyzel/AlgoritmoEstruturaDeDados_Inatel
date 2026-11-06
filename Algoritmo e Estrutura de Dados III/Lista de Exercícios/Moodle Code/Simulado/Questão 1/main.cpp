@@ -135,20 +135,25 @@ int main()  {
     int origem, destino, peso;
     int bomba;
 
+    //Pede-se os quantidade de vertices e arestas
     cin >> vertices >> arestas;
 
+    //Cria a lista de adjacência com a quantidade de vertices
     list<Aresta> grafo[vertices];
 
+    //Percorre por todos os vertices existentes
     for(int i = 0; i < vertices; i++)   {
 
         cin >> origem >> destino >> peso;
 
+        //Orientado, logo um único sentido
         grafo[origem].push_back({origem, destino, peso});
 
         }
 
     cin >> bomba;
 
+    //Aplica a função do dijkstra
     dijkstra(grafo, vertices, bomba);
 
     return 0;
