@@ -21,3 +21,139 @@ Por fim, se a opção escolhida for 4, o programa é encerrado.
 Saída
 Na saída, sempre que a opção 2 for escolhida, o programa deve mostrar número i e a toxidade T de cada peixe (no formato i:T) fazendo uma varredura em ordem decrescente na árvore binária de busca, considerando apenas os peixes com toxidade abaixo de Tmax.
 */
+
+
+#include<iostream>
+#include<list>
+using namespace std;
+
+struct node{
+    int indice;
+    int toxidade;
+    struct node * left;
+    struct node * right;
+};
+
+// INSERIR PEIXE NA ABB
+void insert(node * & current, int indice, int toxidade){
+    if(current == NULL){
+        current = new node;
+        current->indice = indice;
+        current->toxidade = toxidade;
+        current->left = NULL;
+        current->right = NULL;
+    }
+    else if(toxidade < current->toxidade){
+        insert(current->left, indice, toxidade);
+    }
+    else{
+        insert(current->right, indice, toxidade);
+    }
+}
+
+// LISTAR EM ORDEM DECRESCENTE
+void show_desc(node * current, double Tmax){
+    if(current != NULL){
+
+        show_desc(current->right, Tmax);
+
+        if(current->toxidade < Tmax){
+            cout << current->indice << ":" << current->toxidade << endl;
+        }
+
+        show_desc(current->left, Tmax);
+    }
+}
+
+// LIBERAR MEMORIA
+void destruct(node * & current){
+    if(current != NULL){
+        destruct(current->left);
+        destruct(current->right);
+
+        delete current;
+        current = NULL;
+    }
+}
+
+// REMOVER TODOS OS PEIXES COM TOXIDADE >= Tmin
+void remove_ge(node * & current, double Tmin){
+    if(current == NULL){
+        return;
+    }
+
+    if(current->toxidade >= Tmin){
+
+        node * temp = current;
+
+        remove_ge(temp->left, Tmin);
+
+        destruct(temp->right);
+
+        current = temp->left;
+
+        delete temp;
+    }
+    else{
+        remove_ge(current->left, Tmin);
+        remove_ge(current->right, Tmin);
+    }
+}
+
+int main(){
+    node * root = NULL;
+
+    int opcao;
+
+    do{
+        cin >> opcao;
+
+        switch(opcao){
+
+            case 1:{
+                int indice;
+                double V, E, O;
+
+                cin >> indice;
+                cin >> V >> E >> O;
+
+                int N = 7;
+
+                int T = (int)(V * E * N * E * N * O);
+
+                insert(root, indice, T);
+
+                break;
+            }
+
+            case 2:{
+                double Tmax;
+
+                cin >> Tmax;
+
+                show_desc(root, Tmax);
+
+                break;
+            }
+
+            case 3:{
+                double Tmin;
+
+                cin >> Tmin;
+
+                remove_ge(root, Tmin);
+
+                break;
+            }
+
+            case 4:{
+                destruct(root);
+
+                break;
+            }
+        }
+
+    }while(opcao != 4);
+
+    return 0;
+}
